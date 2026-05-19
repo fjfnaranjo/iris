@@ -38,10 +38,10 @@ init-db-dev: init-db
 
 .PHONY: style
 style:
-	@$(exec) $(COMPOSE_EXEC_CMD) isort manage.py iris deps/iris_wc
-	@$(exec) $(COMPOSE_EXEC_CMD) black manage.py iris deps/iris_wc
+	@$(exec) $(COMPOSE_EXEC_CMD) isort manage.py iris
+	@$(exec) $(COMPOSE_EXEC_CMD) black manage.py iris
 
 .PHONY: style-check
 style-check:
-	@$(exec) $(COMPOSE_EXEC_CMD) isort --check manage.py iris deps/iris_wc
-	@$(exec) $(COMPOSE_EXEC_CMD) black --check manage.py iris deps/iris_wc
+	@$(exec) $(COMPOSE_EXEC_CMD) isort --check manage.py iris
+	@$(exec) $(COMPOSE_EXEC_CMD) black --check manage.py iris

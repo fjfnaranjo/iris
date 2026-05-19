@@ -8,11 +8,10 @@ RUN pip3 install -r requirements.txt
 COPY requirements.dev.txt requirements.dev.txt
 RUN pip3 install -r requirements.dev.txt
 
-COPY deps /app/deps
 COPY manage.py /app/manage.py
 COPY iris /app/iris
 WORKDIR /app
-ENV PYTHONPATH="/app:/app/deps/iris_wc"
+ENV PYTHONPATH="/app"
 RUN ./manage.py compilemessages
 
 
@@ -25,5 +24,5 @@ RUN pip3 install -r requirements.txt
 
 COPY --from=dev /app /app
 WORKDIR /app
-ENV PYTHONPATH="/app:/app/deps/iris_wc"
+ENV PYTHONPATH="/app"
 CMD [ "./manage.py", "runserver", "0.0.0.0:8000" ]
