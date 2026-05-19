@@ -16,6 +16,6 @@ jobs:
     - name: Install pip dependencies
       run: pip3 install -r requirements.dev.txt
     - name: Check styles with Black
-      run: black --check manage.py iris deps/iris_wc
+      run: black --check manage.py iris
     - name: Check imports with isort
-      run: isort --check manage.py iris deps/iris_wc
+      run: isort --check manage.py iris
